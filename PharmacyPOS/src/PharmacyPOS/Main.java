@@ -31,7 +31,7 @@ public class Main {
     static ArrayList<Items> ItemsCart = new ArrayList<>();
 
     static int counter = 0;
-    static double userCash = 0;
+    static float userCash = 0;
     static double[] _SubTotals;
 
     public static void main(String[] args) {
@@ -167,12 +167,13 @@ public class Main {
             System.out.printf("Discounted: \t\t\t\t%,.3f\n", 0.000);
         //Ask the user to pay
         System.out.print("Cash:\t\t\t\t\t\t");
-        userCash = scan.nextDouble();
+        userCash = scan.nextFloat();
+        System.out.println(userCash + " " + (userCash < cashier.Total));
         //Check if the user entered a valid amount
         while (userCash < cashier.Total) {
             System.out.println("Enter a valid cash amount!");
             System.out.print("Cash:\t\t\t\t\t\t");
-            userCash = scan.nextDouble();
+            userCash = scan.nextFloat();
         }
         //Display the users change
         System.out.printf("Change: \t\t\t\t\t%,.3f\n", (cashier.setgetChange(userCash)));
